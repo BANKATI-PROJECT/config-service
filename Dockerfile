@@ -7,7 +7,6 @@ RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime stage
 FROM openjdk:17-oracle
-VOLUME /tmp
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8099
